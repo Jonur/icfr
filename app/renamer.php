@@ -41,7 +41,7 @@ foreach ($files as $file => $value) {
 
     // Temporarily rename all files with a hash in the sorted array to avoid same file names
     $oldFileName = $filepath . '\\' . $file;
-    $newFileName = $filepath . '\\' . date("d-m-Y", strtotime($value)) . '-' . ($userLabel ? $userLabel . '-' : '') . $enumeration . $ext;
+    $newFileName = $filepath . '\\' . date("Y-m-d", strtotime($value)) . '-' . ($userLabel ? $userLabel . '-' : '') . $enumeration . $ext;
     $files[$file] = $newFileName;
 
     rename($oldFileName, $newFileName);
