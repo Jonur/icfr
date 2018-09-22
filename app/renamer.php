@@ -1,7 +1,7 @@
 <?php
 
 if (!$userDirectory) {
-    exit;
+    return;
 }
 
 require_once "functions.php";
@@ -46,3 +46,5 @@ foreach ($files as $file => $value) {
 
     rename($oldFileName, $newFileName);
 }
+
+header("Location: ?r=success");
